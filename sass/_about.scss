@@ -1,0 +1,131 @@
+.about-wrapper {
+    @include mq(desktop , max) {
+        padding: 0 24px;
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-top: 120px;
+    margin-bottom: 56px;
+    padding: 56px;
+    @include mq(tablet , max) {
+        padding: 32px;
+        margin-top: 64px;
+    }
+
+    border-radius: 15px;
+
+    background: $light-background url(/img/noise.svg) center center no-repeat;
+    background-size: cover;
+
+     &__small-title {
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: bolder;
+        color: $primary;
+        text-transform: uppercase;
+    }
+       &__big-title {
+        margin-bottom: 16px;
+        font-size: 32px;
+        @include mq(desktop, max) {
+            font-size: 24px;
+          }
+        font-weight: bold;
+        color: $dark-text;
+    }
+       &__text {
+        font-size: 18px;
+        font-weight: normal;
+        color: $dark-text;
+        line-height: 28px;
+        .extra {
+            @include mq(tablet , max) {
+                display: none;
+            }
+        }
+    }
+
+}
+
+.advantages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin-top: 56px;
+    margin-bottom: 120px;
+    padding: 0 24px;
+
+    @include mq(tablet , max) {
+        margin-top: 32px;
+        margin-bottom: 64px;
+    }
+
+      &__big-title {
+        font-size: 32px;
+        @include mq(desktop, max) {
+            font-size: 24px;
+          }
+        font-weight: bold;
+        color: $dark-text;
+
+        text-align: center;
+    }
+
+    .-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 32px;
+        @include mq(tablet, max) {
+            margin-right: 0;
+          }
+        margin-top: 32px;
+
+        @include mq(tablet, min) {
+            &:last-child {
+                margin-right: 0;
+            }
+          }
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        min-width: 100px;
+
+        margin-right: 32px;
+
+         @include mq(tablet , max) {
+            margin-right: 24px;
+         }
+         @include mq(mobile, max) {
+            margin-right: 16px;
+       }
+
+       &:last-child {
+        margin-right: 0;
+    }
+
+        &-percentage {
+            margin-top: 16px;
+            font-size: 16px;
+        }
+        &-skill{
+            margin-top: 8px;
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,166 @@
+.hero-wrapper {
+  width: 100%;
+  &::after {
+    content: url("/img/hero-pointer.svg");
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include mq(desktop, max) {
+      display: none;
+    }
+  }
+
+}
+
+.hero {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  @include mq(tablet, max) {
+    flex-direction: column;
+  }
+  justify-content: space-between;
+
+  margin-top: 80px;
+  @include mq(tablet, max) {
+    margin-top: 24px;
+  }
+  height: auto;
+  @include mq(desktop, max) {
+    padding: 0 24px;
+  }
+
+  @include mq(s-desktop, max) {
+    justify-content: center;
+  }
+
+  &__image {
+    position: relative;
+    margin-right: auto;
+  }
+
+  &__image::before {
+    @include mq(s-desktop, min) {
+      content: url("/img/hero-circle.svg");
+      position: absolute;
+      left: -64px;
+      bottom: 30px;
+    }
+ 
+  }
+
+  &__image::after {
+      @include mq(s-desktop, min) {
+        content: url("/img/hero-bg.svg");
+        position: absolute;
+        top: -30%;
+        left: 60%;
+        z-index: -10;
+      }
+  }
+
+  &__image .-desktop {
+    height: 505px;
+    display: none;
+    @include mq(tablet, min) {
+      display: block;
+    }
+    @include mq(desktop, max) {
+      height: 450px;
+    }
+    @include mq(s-desktop, max) {
+      height: 400px;
+    }
+  }
+
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+
+    max-width: 558px;
+
+    @include mq(tablet, min) {
+      margin-left: 64px;
+    }
+
+    h1 {
+      margin-top: 24px;
+
+      font-weight: bold;
+      font-size: 60px;
+      color: $dark-text;
+
+      @include mq(desktop, max) {
+        font-size: 50px;
+      }
+      @include mq(s-desktop, max) {
+        font-size: 40px;
+      }
+    }
+    p {
+      margin-top: 16px;
+      color: $dark-text;
+      font-size: 18px;
+      font-weight: 450;
+    }
+
+    &-buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-buttons .mail , &-buttons .social-media {
+        margin-top: 32px;
+    }
+
+    &-buttons .mail a {
+      display: block;
+
+      padding: 18.5px 45.5px;
+      margin-right: 16px;
+      @include mq(mobile, max) {
+        margin-right: 0;
+      }
+
+      color: $light-text;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+
+      background-color: $primary;
+    }
+
+    &-buttons .social-media {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &-buttons .social-media a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      width: 60px;
+      height: 60px;
+
+      border-radius: 50%;
+      border: solid 2px $primary;
+    }
+  }
+}

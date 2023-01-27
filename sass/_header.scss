@@ -1,0 +1,118 @@
+.navbar {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 32px;
+
+    max-width: 1140px;
+    width: 100%;
+    height: 64px;
+
+    background-color: $light-text;
+
+    @include mq(desktop , max) {
+        padding: 0 24px;
+    }
+
+    &__logo img {
+        height: 35px;
+
+        @include mq(tablet , max) {
+            height: 25px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        @include mq(tablet , max) {
+            display: none;
+        }
+    }
+
+    &__links a {
+         margin-right: 64px;
+         &:last-child {
+            margin-right: 0;
+         }
+         padding-bottom: 4px;
+
+         text-decoration: none;
+         color: $dark-text;
+         font-style: 18px;
+         font-weight: 450;
+
+         &:hover {
+            border-bottom: 2px solid $dark-text;
+         }
+    }
+    &__button {
+
+        padding: 18.5px 45.5px;
+
+        border: 2px solid $primary;
+        border-radius: 100px;
+        text-decoration: none;
+        color: $primary;
+        font-style: 18px;
+        font-weight: bold;
+        @include mq(tablet , max) {
+            display: none;
+        }
+    }
+}
+
+.navbar-mobile {
+    position: relative ;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include mq(tablet , max) {
+        display: flex;
+    }
+
+    &__links {
+        position: absolute;
+        right: 0;
+        top: 100%;
+
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        margin-top: 16px;
+        padding: 32px;
+
+        width: 180px;
+
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px 5px rgba(54, 51, 51, 0.063);
+        background-color: $light-text;
+        z-index: 111;
+
+        a {
+            text-decoration: none;
+            color: $dark-text;
+            font-size: 18px;
+            margin-top: 32px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+    }
+
+    &__icon {
+        cursor: pointer;
+    }
+}
+
