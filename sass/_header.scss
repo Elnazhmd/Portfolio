@@ -1,9 +1,27 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .navbar {
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     margin-top: 32px;
 
@@ -26,11 +44,22 @@
     }
 
     &__links {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-grow: 1;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
         @include mq(tablet , max) {
             display: none;
         }
@@ -71,11 +100,20 @@
 .navbar-mobile {
     position: relative ;
     display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
     @include mq(tablet , max) {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
@@ -85,9 +123,16 @@
         top: 100%;
 
         display: none;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
 
         margin-top: 16px;
         padding: 32px;
@@ -95,7 +140,8 @@
         width: 180px;
 
         border-radius: 8px;
-        box-shadow: 0px 2px 5px 5px rgba(54, 51, 51, 0.063);
+        -webkit-box-shadow: 0px 2px 5px 5px rgba(54, 51, 51, 0.063);
+                box-shadow: 0px 2px 5px 5px rgba(54, 51, 51, 0.063);
         background-color: $light-text;
         z-index: 111;
 
@@ -115,4 +161,3 @@
         cursor: pointer;
     }
 }
-
